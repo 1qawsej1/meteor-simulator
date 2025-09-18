@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meteor Templates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="designer.html">Meteor Designer</a></li>
+            <li><a href="simulation.html">Simulation</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <h1>Meteor Templates</h1>
+    <ul id="templateList"></ul>
+
+    <script type="module">
+        import { meteorTemplates } from './meteorData.js';
+        const list = document.getElementById('templateList');
+        meteorTemplates.forEach(m => {
+            const li = document.createElement('li');
+            li.textContent = `${m.name} - Size: ${m.size}, Density: ${m.density}, Material: ${m.material}, Velocity: ${m.velocity}`;
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>
