@@ -6,33 +6,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Meteor Designer</h1>
-    <canvas id="drawCanvas" width="500" height="500"></canvas>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="designer.html">Meteor Designer</a></li>
+            <li><a href="simulation.html">Simulation</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
 
+    <h1>Meteor Designer</h1>
+    <p>Draw your meteor below or select a predefined template.</p>
+
+    <canvas id="drawCanvas" width="600" height="400"></canvas>
     <div>
-        <label>Size: <input type="range" id="sizeSlider" min="0.5" max="3" step="0.1" value="1"></label>
-        <label>Density: <input type="range" id="densitySlider" min="1000" max="8000" step="100" value="3000"></label>
-        <label>Material:
-            <select id="materialSelect">
-                <option value="stony">Stony</option>
-                <option value="iron">Iron</option>
-                <option value="icy">Icy</option>
-                <option value="carbonaceous">Carbonaceous</option>
-            </select>
-        </label>
         <label>Template:
             <select id="templateSelect"></select>
         </label>
-        <button id="resetBtn">Reset</button>
+        <button id="resetBtn">Reset Drawing</button>
     </div>
 
-    <a href="simulation.html">Go to Simulation</a>
-
     <script type="module">
-        import { initDrawing } from './drawing.js';
+        import { initDrawing, resetDrawing } from './drawing.js';
         import { meteorTemplates } from './meteorData.js';
 
-        // Populate template dropdown
         const templateSelect = document.getElementById('templateSelect');
         meteorTemplates.forEach((m, i) => {
             const opt = document.createElement('option');
@@ -41,11 +39,9 @@
             templateSelect.appendChild(opt);
         });
 
-        initDrawing();
+        document.getElementById('resetBtn').addEventListener('click', resetDrawing);
 
-        document.getElementById('resetBtn').addEventListener('click', () => {
-            import('./drawing.js').then(mod => mod.resetDrawing());
-        });
+        initDrawing();
     </script>
 </body>
 </html>
