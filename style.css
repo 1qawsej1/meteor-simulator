@@ -1,0 +1,124 @@
+/* ---------- Global Styles ---------- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* ---------- Navigation Bar ---------- */
+nav {
+    background-color: #333;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    flex: 1;
+}
+
+nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+nav ul li a.active {
+    background-color: #04AA6D;
+}
+
+/* ---------- Canvas Styles ---------- */
+canvas {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e3f2fd; /* Light blue for simulation / designer */
+    display: block;
+    margin: 10px 0;
+}
+
+/* ---------- Buttons and Inputs ---------- */
+button {
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #04AA6D;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #03915b;
+}
+
+input[type="range"], select {
+    margin: 0 5px;
+    padding: 3px;
+    vertical-align: middle;
+}
+
+/* ---------- Event Log ---------- */
+#eventLog {
+    list-style: none;
+    padding-left: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+#eventLog li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* ---------- Blast Zones (Simulation) ---------- */
+.blast-zone {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 10px;
+    }
+}
