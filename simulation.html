@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meteor Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Meteor Simulation</h1>
+    <canvas id="simCanvas" width="800" height="600"></canvas>
+
+    <div>
+        <button id="runBtn">Run</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="snapshotBtn">Snapshot</button>
+        <button id="exportBtn">Export JSON</button>
+    </div>
+
+    <a href="analysis.html">Go to Analysis</a>
+
+    <div id="logContainer">
+        <h3>Event Log</h3>
+        <ul id="eventLog"></ul>
+    </div>
+
+    <script type="module">
+        import { initSimulator } from './simulator.js';
+        import { initDrawing } from './drawing.js';
+
+        initDrawing();   // To fetch the drawn meteor shape
+        initSimulator(); // Run simulation
+    </script>
+</body>
+</html>
